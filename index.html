@@ -221,21 +221,6 @@ select.hsel{background:var(--bg2);border:1px solid var(--bd);border-radius:var(-
 .bw-date-input{width:100%;height:48px;padding:0 12px;font-size:13px;font-family:var(--font);background:var(--bg2);border:1px solid var(--bd);border-radius:var(--r2);color:var(--txt);outline:none;-webkit-appearance:none;color-scheme:dark;cursor:pointer}
 .bw-save-btn{height:48px;padding:0 20px;background:linear-gradient(135deg,var(--gn),#00A862);color:#000;border:none;border-radius:var(--r2);font-size:14px;font-weight:700;font-family:var(--font);cursor:pointer;white-space:nowrap;flex-shrink:0}
 .bw-save-btn:active{transform:scale(.96)}
-
-/* CARDIO BLOCK */
-.cardio-block{background:var(--bg1);border:1px solid var(--bd);border-radius:var(--r);padding:16px;margin:0 20px 12px}
-.cardio-title{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--mt);margin-bottom:14px}
-.cardio-title::before{content:'';display:block;width:8px;height:8px;border-radius:50%;background:var(--bl);box-shadow:0 0 6px var(--bl)}
-.cardio-row{display:flex;gap:10px}
-.cardio-field{flex:1}
-.cardio-lbl{font-size:10px;font-weight:500;color:var(--mt);margin-bottom:5px;letter-spacing:.04em}
-.cardio-inp{width:100%;background:var(--bg2);border:1px solid var(--bd);border-radius:var(--r3);height:40px;color:var(--txt);font-family:var(--mono);font-size:16px;padding:0 12px;outline:none;-webkit-appearance:none;text-align:center}
-.cardio-inp:focus{border-color:var(--bl)}
-.cardio-intensity{display:flex;gap:6px;margin-top:12px}
-.ci-btn{flex:1;height:34px;border-radius:var(--r3);border:1px solid var(--bd);background:var(--bg2);color:var(--mt);font-size:11px;font-weight:600;font-family:var(--font);cursor:pointer;transition:all .15s;letter-spacing:.03em}
-.ci-btn.on-low{background:rgba(61,142,240,.15);border-color:var(--bl);color:var(--bl)}
-.ci-btn.on-med{background:rgba(255,184,0,.15);border-color:var(--gold);color:var(--gold)}
-.ci-btn.on-high{background:rgba(255,77,28,.15);border-color:var(--ac);color:var(--ac)}
 .bw-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:20px}
 .bw-list{display:flex;flex-direction:column;gap:6px}
 .bw-row{display:flex;justify-content:space-between;align-items:center;background:var(--bg1);border:1px solid var(--bd);border-radius:var(--r2);padding:12px 14px}
@@ -258,27 +243,6 @@ select.hsel{background:var(--bg2);border:1px solid var(--bd);border-radius:var(-
 .empty-txt{font-size:15px;font-weight:400}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
 .blink{animation:blink 1s ease-in-out infinite}
-
-/* LAST WORKOUT BANNER */
-#last-wk-banner{display:none;background:var(--bg1);border:1px solid var(--bd);border-radius:var(--r);padding:14px 16px;margin-bottom:20px;position:relative;overflow:hidden}
-#last-wk-banner::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,var(--ac),var(--ac2))}
-.lwb-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px}
-.lwb-lbl{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--mt);margin-bottom:4px}
-.lwb-name{font-family:var(--font-disp);font-size:22px;letter-spacing:.04em;color:var(--txt);line-height:1}
-.lwb-date{font-size:11px;font-family:var(--mono);color:var(--mt);margin-top:2px}
-.lwb-right{text-align:right;flex-shrink:0}
-.lwb-next-lbl{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--gn);margin-bottom:3px}
-.lwb-next{font-size:13px;font-weight:600;color:var(--gn)}
-.lwb-pills{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
-.lwb-pill{font-size:10px;font-weight:500;padding:3px 9px;border-radius:20px;background:rgba(255,77,28,.1);color:var(--ac);border:1px solid rgba(255,77,28,.2)}
-
-/* DCARD STATES */
-.dcard.dcard-last{border-color:rgba(255,77,28,.4);background:rgba(255,77,28,.05)}
-.dcard.dcard-next{border-color:rgba(0,201,122,.45);background:rgba(0,201,122,.05)}
-.dcard-status{display:inline-flex;align-items:center;gap:4px;font-size:9px;font-weight:700;padding:2px 8px;border-radius:20px;letter-spacing:.07em;text-transform:uppercase;margin-top:5px}
-.dcard-status-last{background:rgba(255,77,28,.12);color:var(--ac);border:1px solid rgba(255,77,28,.25)}
-.dcard-status-next{background:rgba(0,201,122,.12);color:var(--gn);border:1px solid rgba(0,201,122,.25)}
-.dcard-last-meta{font-size:10px;color:var(--mt);margin-top:2px;font-family:var(--mono)}
 </style>
 </head>
 <body>
@@ -324,20 +288,6 @@ select.hsel{background:var(--bg2);border:1px solid var(--bd);border-radius:var(-
 
 <!-- LOG -->
 <div class="pg on" id="pg-log">
-  <div id="last-wk-banner">
-    <div class="lwb-top">
-      <div>
-        <div class="lwb-lbl">Último treino</div>
-        <div class="lwb-name" id="lwb-name">—</div>
-        <div class="lwb-date" id="lwb-date">—</div>
-      </div>
-      <div class="lwb-right">
-        <div class="lwb-next-lbl">Próximo</div>
-        <div class="lwb-next" id="lwb-next">—</div>
-      </div>
-    </div>
-    <div class="lwb-pills" id="lwb-pills"></div>
-  </div>
   <div class="srow" id="stats"></div>
   <div id="s1">
     <div class="slbl">Escolha o treino</div>
@@ -396,25 +346,6 @@ select.hsel{background:var(--bg2);border:1px solid var(--bd);border-radius:var(-
     </div>
     <div id="lhint"></div>
     <div id="excards"></div>
-    <div class="cardio-block" id="cardio-block">
-      <div class="cardio-title">Cardio</div>
-      <div class="cardio-row">
-        <div class="cardio-field">
-          <div class="cardio-lbl">Duração (min)</div>
-          <input class="cardio-inp" id="cardio-min" type="number" inputmode="numeric" placeholder="0" min="0" max="180">
-        </div>
-        <div class="cardio-field">
-          <div class="cardio-lbl">Tipo</div>
-          <input class="cardio-inp" id="cardio-type" type="text" placeholder="Esteira, bike..." style="font-family:var(--font);font-size:14px;text-align:left;padding:0 10px">
-        </div>
-      </div>
-      <div class="cardio-lbl" style="margin-top:12px">Intensidade</div>
-      <div class="cardio-intensity">
-        <button class="ci-btn" id="ci-low"  onclick="setCI('low')" >Leve</button>
-        <button class="ci-btn" id="ci-med"  onclick="setCI('med')" >Média</button>
-        <button class="ci-btn" id="ci-high" onclick="setCI('high')">Alta</button>
-      </div>
-    </div>
     <div class="btm-btns">
       <button class="btn btn-ghost" onclick="cancel()">Cancelar</button>
       <button class="btn btn-primary" onclick="save2()">Salvar treino ✓</button>
@@ -746,27 +677,12 @@ function showPg(id,btn){
 // ── DAY GRID ───────────────────────────────────────────────────────────
 function renderDayGrid(){
   const grid=document.getElementById('day-grid');
-  const lastWk=wks.length?wks[0]:null;
-  const lastName=lastWk?lastWk.muscle:'';
-  const nextName=lastName?nextWorkout(lastName):'';
   grid.innerHTML=Object.keys(TPL).map(name=>{
     const m=DAY_META[name];
-    const isLast=name===lastName;
-    const isNext=name===nextName&&!isLast;
-    let extraClass=isLast?' dcard-last':isNext?' dcard-next':'';
-    let badge='';
-    if(isLast){
-      const dateStr=lastWk?fmt(lastWk.date):'';
-      const durStr=lastWk&&lastWk.dur?' · '+fmtDur(lastWk.dur):'';
-      badge=`<div class="dcard-status dcard-status-last">✓ Último${dateStr?' — '+dateStr+durStr:''}</div>`;
-    } else if(isNext){
-      badge=`<div class="dcard-status dcard-status-next">▶ Próximo sugerido</div>`;
-    }
-    return`<div class="dcard${extraClass}" onclick="go('${name}')">
+    return`<div class="dcard" onclick="go('${name}')">
       <div class="dcard-info">
         <div class="dcard-name">${name}</div>
         <div class="dcard-sub">${m.sub}</div>
-        ${badge}
       </div>
       <div class="dcard-arrow">›</div>
     </div>`;
@@ -934,22 +850,6 @@ function cancel(){
   document.getElementById('timer-bar').classList.remove('on');
   rstWk();rstRest();
 }
-// ── CARDIO ─────────────────────────────────────────────────────────────
-let curCI='';
-function setCI(v){
-  curCI=curCI===v?'':v;
-  ['low','med','high'].forEach(k=>{
-    const b=document.getElementById('ci-'+k);
-    b.className='ci-btn'+(curCI===k?' on-'+k:'');
-  });
-}
-function resetCardio(){
-  document.getElementById('cardio-min').value='';
-  document.getElementById('cardio-type').value='';
-  curCI='';
-  ['low','med','high'].forEach(k=>document.getElementById('ci-'+k).className='ci-btn');
-}
-
 function save2(){
   const ms=getWkMs();const exercises=[];
   TPL[curMuscle].forEach(g=>g.ex.forEach(e=>{
@@ -961,30 +861,8 @@ function save2(){
     if(sets.length)exercises.push({name,group:g.g,type,sets});
   }));
   if(!exercises.length)return;
-  const cardioMin=parseInt(document.getElementById('cardio-min').value)||0;
-  const cardioType=document.getElementById('cardio-type').value.trim();
-  const cardio=cardioMin>0?{min:cardioMin,type:cardioType||null,intensity:curCI||null}:null;
-  wks.unshift({id:Date.now(),name:curMuscle,muscle:curMuscle,date:curDate,exercises,dur:Math.floor(ms/1000),cardio});
-  resetCardio();sv();cancel();renderStats();
-}
-
-// ── LAST WORKOUT BANNER ────────────────────────────────────────────────
-const WORKOUT_ORDER=['Upper A','Lower A','Upper B','Lower B','Ombros + Braços'];
-function nextWorkout(name){
-  const i=WORKOUT_ORDER.indexOf(name);
-  if(i===-1)return'—';
-  return WORKOUT_ORDER[(i+1)%WORKOUT_ORDER.length];
-}
-function renderLastWorkout(){
-  const banner=document.getElementById('last-wk-banner');
-  if(!wks.length){banner.style.display='none';return;}
-  const last=wks[0]; // já ordenado por data desc (unshift no save)
-  banner.style.display='block';
-  document.getElementById('lwb-name').textContent=last.muscle;
-  document.getElementById('lwb-date').textContent=fmt(last.date)+(last.dur?' · '+fmtDur(last.dur):'');
-  document.getElementById('lwb-next').textContent=nextWorkout(last.muscle);
-  const muscleGroups=[...new Set(last.exercises.map(e=>e.group))];
-  document.getElementById('lwb-pills').innerHTML=muscleGroups.map(g=>`<span class="lwb-pill">${g}</span>`).join('');
+  wks.unshift({id:Date.now(),name:curMuscle,muscle:curMuscle,date:curDate,exercises,dur:Math.floor(ms/1000)});
+  sv();cancel();renderStats();
 }
 
 // ── STATS ──────────────────────────────────────────────────────────────
@@ -1006,7 +884,6 @@ function renderStats(){
     <div class="sc"><div class="sl">Semana</div><div class="sv">${wk}</div><div class="ss2">treinos</div></div>
     <div class="sc"><div class="sl">Carga máx</div><div class="sv">${mx.length?Math.max(...mx):0}kg</div><div class="ss2">qualquer ex.</div></div>
     <div class="sc"><div class="sl">PRs</div><div class="sv" style="color:var(--gn)">${totalPRs}</div><div class="ss2">recordes</div></div>`;
-  renderLastWorkout();
 }
 
 // ── HISTORY ────────────────────────────────────────────────────────────
@@ -1036,7 +913,7 @@ function renderHist(){
         <div><div class="wname">${w.muscle}</div><div class="wdate">${fmt(w.date)}</div></div>
         <button class="btn btn-del" onclick="openDel('wk',${w.id})">Excluir</button>
       </div>
-      <div class="wtags"><span class="wtag hl">${w.muscle}</span><span class="wtag">${w.exercises.length} ex.</span><span class="wtag">${sc} séries</span><span class="wtag">⏱ ${dur}</span>${w.cardio?`<span class="wtag" style="color:var(--bl)">🫀 ${w.cardio.min}min${w.cardio.intensity?' · '+{low:'Leve',med:'Média',high:'Alta'}[w.cardio.intensity]:''}${w.cardio.type?' · '+w.cardio.type:''}</span>`:''}</div>
+      <div class="wtags"><span class="wtag hl">${w.muscle}</span><span class="wtag">${w.exercises.length} ex.</span><span class="wtag">${sc} séries</span><span class="wtag">⏱ ${dur}</span></div>
       ${exb}
     </div>`;
   }).join('');
